@@ -1,0 +1,122 @@
+.hero {
+  position: relative;
+  background-color: #23132b;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hero::before {
+  top: 0;
+  height: 100px;
+  background: linear-gradient(180deg, #060307 0%, rgba(35, 19, 43, 0) 100%);
+}
+
+.hero::after {
+  bottom: 0;
+  height: 150px;
+  background: linear-gradient(0deg, #060307 0%, rgba(35, 19, 43, 0) 100%);
+}
+
+.hero .container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 960px;
+}
+
+.hero-wrapper {
+  width: 672px;
+  position: relative;
+  z-index: 30;
+}
+
+.hero-title {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+  font-size: 84px;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #ffffff;
+  margin-bottom: 32px;
+  max-width: 600px;
+  opacity: 0.9;
+}
+
+.explore-btn {
+  display: inline-flex;
+  padding: 16px 32px;
+  background: #764191;
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #5a2d71;
+}
+
+.bg-image {
+  width: 641px;
+  height: 960px;
+  background-image: url('../img/hero/bg-image-desktop.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 24px;
+  overflow: hidden;
+
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1439px) {
+  .hero .container {
+    flex-direction: column;
+    padding: 80px 16px;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero-wrapper {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .bg-image {
+    width: 100%;
+    max-width: 704px;
+    height: 500px;
+    background-size: cover;
+  }
+}
